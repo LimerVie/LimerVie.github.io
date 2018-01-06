@@ -1,0 +1,332 @@
+<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.0",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source"><title> NexT 主题配置备份（二） | Wincer&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0097A7"><meta name="author" content="WincerChan"><meta name="description" itemprop="description" content="这篇博客是承接上一篇 Next 主题配置备份，按照个人喜好做了一些修改。
+加密文章网上针对 Hexo 博客加密文章的办法有两种：
+js 的阻塞机制在 themes-&amp;gt;next-&amp;gt;layout-&amp;gt;_partials-&amp;gt;head.swig 中的 \ 标签后添加以下代码：
+&amp;lt;script&amp;gt;
+    (function(){
+        if(&amp;#39;{{ page.password }}&amp;#39;){
+            if (prompt(&amp;#39;请输入文章密码&amp;#39;, &amp;#39;&amp;#39;) !== &amp;#39;{{ page.password }}&amp;#39;){
+                alert(&amp;#39;密码错误&amp;#39;);
+                history.back();
+            }
+        }
+    })();
+&amp;lt;/script&amp;gt;
+"><meta name="keywords" content="Blog,NexT,博客"><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var t=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,n){return e||-1!==t.indexOf("/*"+n+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){"boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){};var a;if((a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(e,t,n,s){var a=this;s?this.iojs(t,e,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(t,e,function(n){document.getElementById(e).appendChild(document.createTextNode(n)),a.setLS(e,t+versionString+n)},n)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((o.status>=200&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(o=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),o.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(o),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a=this,o=document.createElement("script");o.src=this.jsRunSequence[0].path,o.type="text/javascript",this.jsRunSequence[0].status="loading",o.onload=function(){a.jsRunSequence.shift(),a.jsRunSequence.length>0&&a.runjs()},document.body.appendChild(o)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()},lsloader.loadCombo=function(e){var t="",n={};for(var s in e){var a=this.getLS(e[s].name);if(a)var o=a.split(versionString)[0],i=a.split(versionString)[1];else o="";o==e[s].path?this.jsRunSequence.push({name:e[s].name,code:i,path:e[s].path}):(this.jsRunSequence.push({name:e[s].name,code:null,path:e[s].path,status:"comboloading"}),n[e[s].name]=!0,t+=(""==t?"":";")+e[s].path)}var u=this;if(t){var r=new XMLHttpRequest;r.open("get",combo+t,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void u.runCombo(r.response,n)}else{for(var e in u.jsRunSequence)n[u.jsRunSequence[e].name]&&(u.jsRunSequence[e].status="failed");u.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){(e=e.split("/*combojs*/")).shift();for(var n in this.jsRunSequence)t[this.jsRunSequence[n].name]&&e[0]&&(this.jsRunSequence[n].status="comboJS",this.jsRunSequence[n].code=e[0],this.setLS(this.jsRunSequence[n].name,this.jsRunSequence[n].path+versionString+e[0]),e.shift());this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><link rel="icon shortcut" type="image/ico" href="/img/favicon.png"><link rel="icon" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><meta name="apple-mobile-web-app-title" content="Title"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="480"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Wincer&#39;s Blog"> <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),++window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),++window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>#post-content hr{height:20px;margin:15px auto;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAAZBAMAAAD6cmD+AAAAJFBMVEX////+/v7u7u79/f38/Pz19fX5+fnm5ubr6+vg4ODz8/PX19fmfbrEAAABVklEQVQYGb3AsWoUQRjA8f/HN06R6ht33cJKDhSNzR4rCKlmCdEz1QkHkm4lgeSsoics6VRyQiwDJ3I2erHIvYJP5xPMRRjIjxvUUZ1V7JLLSegqXhu5YomeXXkhWz18+WEpZJPC9+36d0GuyPGpbC07cjk96yp7ckiuOP3or9/eWfIfhJQGc73sP5yzPiqcsVFgg8DzmR91q8O7C4uOBAkGIEZCAb7v9h6J/2wXEzESDASsMBK0iCezajUuOIn3vxNI0VqB/ceDhO0oT52fq3U7p+7C3g0Svgz+AKZGQiv1m/O4Kutno6MXi8aTUrYOCIQEtK4um53z0s/14IEnJOyCsFHAXn3Sax2N9y6JLUlq3MT/kHvbX/VggpFnOisHE/+3FRNyBN9T2PoKMSGH1sfv3dYykqvwZd+tf4VAptJs+m3h1BCyyFCbn2MactUMZeLUuDX/AFJQRNLkIJPDAAAAAElFTkSuQmCC) center center no-repeat}main{text-shadow:rgba(0,0,0,.2) 0 0 1px}#scheme-Paradox .material-layout .mdl-card{border-radius:6px}</style><style>body,html{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#0097a7!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#0097a7!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#0097a7!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#00838f;text-decoration:underline}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-Light.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-Light.woff) format('woff')}@font-face{font-family:Roboto;font-style:italic;font-weight:300;src:local('Roboto LightItalic'),local('Roboto-LightItalic'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-LightItalic.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-LightItalic.woff) format('woff')}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local('Roboto Regular'),local('Roboto-Regular'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-Regular.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-Regular.woff) format('woff')}@font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local('Roboto RegularItalic'),local('Roboto-RegularItalic'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-RegularItalic.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-RegularItalic.woff) format('woff')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-Medium.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-Medium.woff) format('woff')}@font-face{font-family:Roboto;font-style:italic;font-weight:500;src:local('Roboto MediumItalic'),local('Roboto-MediumItalic'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-MediumItalic.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/mdui/0.2.1/fonts/roboto/Roboto-MediumItalic.woff) format('woff')}@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:local('Material Icons'),local('MaterialIcons-Regular'),url(https://cdnjs.cat.net/ajax/libs/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.woff2) format('woff2'),url(https://cdnjs.cat.net/ajax/libs/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.woff) format('woff'),url(https://cdnjs.cat.net/ajax/libs/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.ttf) format('truetype')}</style><script>lsloader.load("jq_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/jquery.min.js",!0)</script><meta property="og:url" content="https://itswincer.com"><meta property="og:type" content="blog"><meta property="og:title" content="NexT 主题配置备份（二） | Wincer&#39;s Blog"><meta property="og:image" content="https://itswincer.com/img/favicon.png"><meta property="og:description" content="这篇博客是承接上一篇 Next 主题配置备份，按照个人喜好做了一些修改。
+加密文章网上针对 Hexo 博客加密文章的办法有两种：
+js 的阻塞机制在 themes-&amp;gt;next-&amp;gt;layout-&amp;gt;_partials-&amp;gt;head.swig 中的 \ 标签后添加以下代码：
+&amp;lt;script&amp;gt;
+    (function(){
+        if(&amp;#39;{{ page.password }}&amp;#39;){
+            if (prompt(&amp;#39;请输入文章密码&amp;#39;, &amp;#39;&amp;#39;) !== &amp;#39;{{ page.password }}&amp;#39;){
+                alert(&amp;#39;密码错误&amp;#39;);
+                history.back();
+            }
+        }
+    })();
+&amp;lt;/script&amp;gt;
+"><meta property="og:article:tag" content="NexT"><meta property="og:article:tag" content="博客"><meta property="article:published_time" content="Fri Jun 30 2017 10:55:34 GMT+0800"><meta property="article:modified_time" content="Tue Dec 26 2017 12:02:07 GMT+0800"><meta name="twitter:title" content="NexT 主题配置备份（二） | Wincer&#39;s Blog"><meta name="twitter:description" content="这篇博客是承接上一篇 Next 主题配置备份，按照个人喜好做了一些修改。
+加密文章网上针对 Hexo 博客加密文章的办法有两种：
+js 的阻塞机制在 themes-&amp;gt;next-&amp;gt;layout-&amp;gt;_partials-&amp;gt;head.swig 中的 \ 标签后添加以下代码：
+&amp;lt;script&amp;gt;
+    (function(){
+        if(&amp;#39;{{ page.password }}&amp;#39;){
+            if (prompt(&amp;#39;请输入文章密码&amp;#39;, &amp;#39;&amp;#39;) !== &amp;#39;{{ page.password }}&amp;#39;){
+                alert(&amp;#39;密码错误&amp;#39;);
+                history.back();
+            }
+        }
+    })();
+&amp;lt;/script&amp;gt;
+"><meta name="twitter:image" content="https://itswincer.com/img/favicon.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://itswincer.com"><link rel="canonical" href="https://itswincer.com/posts/654861fb/index.html"><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://itswincer.com/posts/654861fb/index.html",
+    "headline": "NexT 主题配置备份（二）",
+    "datePublished": "Fri Jun 30 2017 10:55:34 GMT+0800",
+    "dateModified": "Tue Dec 26 2017 12:02:07 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "WincerChan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://upload-images.jianshu.io/upload_images/2133488-9cf5109c2d59a64a.jpg"
+        },
+        "description": "昔日玫瑰以其名流芳，今人所持唯玫瑰之名"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wincer&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",NexT,博客Blog",
+    "description": "这篇博客是承接上一篇 Next 主题配置备份，按照个人喜好做了一些修改。
+加密文章网上针对 Hexo 博客加密文章的办法有两种：
+js 的阻塞机制在 themes-&amp;gt;next-&amp;gt;layout-&amp;gt;_partials-&amp;gt;head.swig 中的 \ 标签后添加以下代码：
+&amp;lt;script&amp;gt;
+    (function(){
+        if(&amp;#39;{{ page.password }}&amp;#39;){
+            if (prompt(&amp;#39;请输入文章密码&amp;#39;, &amp;#39;&amp;#39;) !== &amp;#39;{{ page.password }}&amp;#39;){
+                alert(&amp;#39;密码错误&amp;#39;);
+                history.back();
+            }
+        }
+    })();
+&amp;lt;/script&amp;gt;
+",
+}
+</script><script>!function(e,t,a,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=t.createElement(a),s=t.getElementsByTagName(a)[0],o.async=1,o.src="https://www.google-analytics.com/analytics.js",s.parentNode.insertBefore(o,s)}(window,document,"script",0,"ga"),ga("create","UA-101362832-1","auto"),ga("send","pageview")</script><link rel="manifest" href="/manifest.json"><script>lsloader.load("ap_js","https://cdn.jsdelivr.net/npm/aplayer@1.6.0/dist/APlayer.min.js",!0)</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加密文章"><span class="post-toc-number">1.</span> <span class="post-toc-text">加密文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#js-的阻塞机制"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">js 的阻塞机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#crypto-js-的-AES-加密"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">crypto-js 的 AES 加密</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加一言"><span class="post-toc-number">2.</span> <span class="post-toc-text">添加一言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#压缩博客文章"><span class="post-toc-number">3.</span> <span class="post-toc-text">压缩博客文章</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#博文置顶"><span class="post-toc-number">4.</span> <span class="post-toc-text">博文置顶</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#隐藏文章"><span class="post-toc-number">5.</span> <span class="post-toc-text">隐藏文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#首页"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">首页</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#归档"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">归档</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分享页面"><span class="post-toc-number">6.</span> <span class="post-toc-text">分享页面</span></a></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://s1.ax1x.com/2017/12/24/vGU0K.png)"><p class="article-headline-p"> NexT 主题配置备份（二）</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="https://upload-images.jianshu.io/upload_images/2133488-9cf5109c2d59a64a.jpg" width="44px" height="44px" alt="Author Avatar"></div><div> <strong>WincerChan</strong> <span>6月 30, 2017</span></div><div class="section-spacer"></div> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/NexT/">NexT</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/博客/">博客</a></li></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=NexT 主题配置备份（二）&url=https://itswincer.com/posts/654861fb/index.html&pic=https://itswincer.com/img/favicon.png&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=NexT 主题配置备份（二）&url=https://itswincer.com/posts/654861fb/index.html&via=WincerChan" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://itswincer.com/posts/654861fb/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a><a class="post_share-link" href="https://plus.google.com/share?url=https://itswincer.com/posts/654861fb/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 Google+</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Wincer&#39;s Blog&title=NexT 主题配置备份（二）&summary=这里是 @Wincer，喜欢折腾新技术，却没多大耐心。个人博客会写得比较杂，包括日常吐槽、技术踩坑，偶尔会写正经一点的。欢迎订阅 RSS(•̀ᴗ•́)。&pics=https://itswincer.com/img/favicon.png&url=https://itswincer.com/posts/654861fb/index.html" target="_blank"><li class="mdl-menu__item"> 分享到 QQ</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>这篇博客是承接上一篇 <a href="https://www.itswincer.com/posts/a40f8cd0/" target="_blank" rel="external">Next 主题配置备份</a>，按照个人喜好做了一些修改。</p><h3 id="加密文章"><a href="#加密文章" class="headerlink" title="加密文章"></a>加密文章</h3><p>网上针对 Hexo 博客加密文章的办法有两种：</p><h4 id="js-的阻塞机制"><a href="#js-的阻塞机制" class="headerlink" title="js 的阻塞机制"></a>js 的阻塞机制</h4><p>在 <code>themes-&gt;next-&gt;layout-&gt;_partials-&gt;head.swig</code> 中的 \</p><meta> 标签后添加以下代码：<p></p><pre><code class="javascript">&lt;script&gt;
+    (function(){
+        if(&#39;{{ page.password }}&#39;){
+            if (prompt(&#39;请输入文章密码&#39;, &#39;&#39;) !== &#39;{{ page.password }}&#39;){
+                alert(&#39;密码错误&#39;);
+                history.back();
+            }
+        }
+    })();
+&lt;/script&gt;
+</code></pre><a id="more"></a><p>这里的 <code>page</code> 变量就是文章的首部：需要在首部自行添加 <code>password</code> 字段，再设置一个密码值：</p><pre><code class="markdown">---
+title: NexT主题配置备份（二）
+type: categories
+categories: 笔记
+tags:
+    - NexT
+    - 博客
+copyright: true
+date: 2017/06/20 10:55:34
+password: ffffff
+---
+</code></pre><p>当然这个并不是真的加密，用查源代码的方式还是能看出博客的内容，不过这已经可以阻挡绝大部分访客了。</p><h4 id="crypto-js-的-AES-加密"><a href="#crypto-js-的-AES-加密" class="headerlink" title="crypto-js 的 AES 加密"></a>crypto-js 的 AES 加密</h4><p>采用的是 <a href="https://github.com/edolphin-ydf/hexo-encrypt" target="_blank" rel="external">hexo-encrypt</a> 插件，原理见作者<a href="http://edolphin.site/2016/05/31/encrypt-post/" target="_blank" rel="external">博客</a>，这个就属于真正的加密了，不知道密码查看源代码就是一堆无法辨认的字符。</p><h3 id="添加一言"><a href="#添加一言" class="headerlink" title="添加一言"></a>添加一言</h3><p>使用效果见我的博客侧边栏的底部。</p><p>需要修改 <code>themes-&gt;next-&gt;layout-&gt;_macro-&gt;sidebar.swig</code>，在倒数第三行的 后面加上：</p><pre><code class="html">&lt;div class = &quot;cost&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cost-inner&quot;&gt;&lt;script language=&quot;Javascript&quot; src=&quot;https://rawgit.com/WincerChan/d314ff3a0ddc197134ad56efaeb34da0/raw/f4c3e73cdb08235fb01cd8849457c81d52236a1d/hitokoto.js&quot;&gt;&lt;/script&gt;&lt;/div&gt;
+</code></pre><p>这里的 Js 文件是我自己写的，托管在「<a href="https://gist.github.com/d314ff3a0ddc197134ad56efaeb34da0.git" target="_blank" rel="external">Gist</a>」，当然你可以自由修改这其中的每一句。我以后也会添加的越来越多</p><p>然后修改 <code>themes-&gt;next-&gt;source-&gt;css-&gt;_schemes-&gt;Pisces</code>，添加：</p><pre><code class="css">.cost {
+  margin-top: 10px;
+}
+
+.cost-inner {
+  box-sizing: border-box;
+  width: 240px;
+  padding: 20px 10px;
+  background: white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+</code></pre><h3 id="压缩博客文章"><a href="#压缩博客文章" class="headerlink" title="压缩博客文章"></a>压缩博客文章</h3><p>这里采用的是 <code>gulp</code> 插件，hexo 根目录新建 <code>gulpfile.js</code> 文件：</p><pre><code class="javascript">var gulp = require(&#39;gulp&#39;),
+    uglify = require(&#39;gulp-uglify&#39;),
+    del = require(&#39;del&#39;);
+    rename = require(&#39;gulp-rename&#39;),
+    cssmin = require(&#39;gulp-minify-css&#39;);
+    htmlclean = require(&#39;gulp-htmlclean&#39;);
+    htmlmin = require(&#39;gulp-htmlmin&#39;);
+    imagemin = require(&#39;gulp-imagemin&#39;);
+    runSequence = require(&#39;run-sequence&#39;);
+    Hexo = require(&#39;hexo&#39;);
+
+//清除public
+gulp.task(&#39;clean&#39;, function(){
+    return del([&#39;public/**/*&#39;]);
+});
+// 利用Hexo API 来生成博客内容， 效果和在命令行运行： hexo g 一样
+// generate html with &#39;hexo generate&#39;
+var hexo = new Hexo(process.cwd(), {});
+gulp.task(&#39;generate&#39;, function(cb) {
+    hexo.init().then(function() {
+        return hexo.call(&#39;generate&#39;, {
+            watch: false
+        });
+    }).then(function() {
+        return hexo.exit();
+    }).then(function() {
+        return cb()
+    }).catch(function(err) {
+        console.log(err);
+        hexo.exit(err);
+        return cb(err);
+    })
+})
+//JS压缩
+gulp.task(&#39;uglify&#39;, function() {
+    return gulp.src(&#39;././public/js/*.js&#39;)
+        .pipe(uglify())
+        .pipe(gulp.dest(&#39;././public/js/&#39;));
+});
+//public-fancybox-js压缩
+gulp.task(&#39;fancybox:js&#39;, function() {
+    return gulp.src(&#39;././public/fancybox/jquery.fancybox.js&#39;)
+        .pipe(uglify())
+        .pipe(gulp.dest(&#39;././public/fancybox/&#39;));
+});
+
+//public-fancybox-css压缩
+gulp.task(&#39;fancybox:css&#39;, function() {
+    return gulp.src(&#39;././public/fancybox/jquery.fancybox.css&#39;)
+        .pipe(cssmin())
+        .pipe(gulp.dest(&#39;././public/fancybox/&#39;));
+});
+//CSS压缩
+gulp.task(&#39;cssmin&#39;, function() {
+    return gulp.src(&#39;././public/css/style.css&#39;)
+        .pipe(cssmin())
+        .pipe(gulp.dest(&#39;././public/css/&#39;));
+});
+
+// 压缩public目录下的所有html
+gulp.task(&#39;minify-html&#39;, function() {
+    return gulp.src(&#39;./public/**/*.html&#39;)
+        .pipe(htmlclean())
+        .pipe(htmlmin({
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+        }))
+        .pipe(gulp.dest(&#39;./public&#39;))
+});
+// 同上，压缩图片，这里采用了： 最大化压缩效果。
+gulp.task(&#39;minify-img-aggressive&#39;, function() {
+    return gulp.src(&#39;./public/images/**/*.*&#39;)
+        .pipe(imagemin(
+        [imagemin.gifsicle({&#39;optimizationLevel&#39;: 3}), 
+        imagemin.jpegtran({&#39;progressive&#39;: true}), 
+        imagemin.optipng({&#39;optimizationLevel&#39;: 7}), 
+        imagemin.svgo()],
+        {&#39;verbose&#39;: true}))
+        .pipe(gulp.dest(&#39;./public/images&#39;))
+})
+
+// 用run-sequence并发执行，同时处理html，css，js，img
+gulp.task(&#39;compress&#39;, function(cb) {
+    runSequence([&#39;minify-html&#39;, &#39;cssmin&#39;, &#39;uglify&#39;, &#39;fancybox:js&#39;, &#39;fancybox:css&#39;, &#39;minify-img-aggressive&#39;], cb);
+});
+// 执行顺序： 清除public目录 -&gt; 产生原始博客内容 -&gt; 执行压缩混淆
+gulp.task(&#39;build&#39;, function(cb) {
+    runSequence(&#39;clean&#39;, &#39;generate&#39;, &#39;compress&#39;, cb)
+});
+gulp.task(&#39;default&#39;, [&#39;build&#39;])
+</code></pre><p>需要用 npm 安装一些包：</p><pre><code class="json">&quot;del&quot;: &quot;^3.0.0&quot;,
+&quot;gulp&quot;: &quot;^3.9.1&quot;,
+&quot;gulp-clean-css&quot;: &quot;^3.4.2&quot;,
+&quot;gulp-htmlclean&quot;: &quot;^2.7.14&quot;,
+&quot;gulp-htmlmin&quot;: &quot;^3.0.0&quot;,
+&quot;gulp-minify-css&quot;: &quot;^1.2.4&quot;,
+&quot;gulp-rename&quot;: &quot;^1.2.2&quot;,
+&quot;gulp-sourcemaps&quot;: &quot;^2.6.0&quot;,
+&quot;gulp-uglify&quot;: &quot;^3.0.0&quot;,
+&quot;run-sequence&quot;: &quot;^1.2.2&quot;,
+&quot;gulp-imagemin&quot;: &quot;^3.3.0&quot;,
+</code></pre><p>在执行 <code>gulp build</code> 时，会自动执行 <code>hexo clean</code>、<code>hexo g</code>，这时直接 <code>hexo d</code> 就行了。</p><p>这是网站优化后的结果：<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=" data-original="https://ws1.sinaimg.cn/large/ba22af52gy1fh33l1gzdxj20no08uaaj.jpg" alt=""></p><h3 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h3><p>修改 <code>node_modules/hexo-generator-index/lib/generator</code> 内的代码为：</p><pre><code class="javascript">&#39;use strict&#39;;
+var pagination = require(&#39;hexo-pagination&#39;);
+module.exports = function(locals){
+  var config = this.config;
+  var posts = locals.posts;
+    posts.data = posts.data.sort(function(a, b) {
+        if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义
+            if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+            else return b.top - a.top; // 否则按照top值降序排
+        }
+        else if(a.top &amp;&amp; !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+            return -1;
+        }
+        else if(!a.top &amp;&amp; b.top) {
+            return 1;
+        }
+        else return b.date - a.date; // 都没定义按照文章日期降序排
+    });
+  var paginationDir = config.pagination_dir || &#39;page&#39;;
+  return pagination(&#39;&#39;, posts, {
+    perPage: config.index_generator.per_page,
+    layout: [&#39;index&#39;, &#39;archive&#39;],
+    format: paginationDir + &#39;/%d/&#39;,
+    data: {
+      __index: true
+    }
+  });
+};
+</code></pre><p>在文章的首部添加 <code>top</code> 值，数值越大越靠前：</p><pre><code class="markdown">---
+title: NexT主题配置备份（二）
+type: categories
+categories: 笔记
+tags:
+  - NexT
+  - 博客
+copyright: true
+top: 888
+date: &#39;2017/06/30 10:55:34&#39;
+abbrlink: 654861fb
+---
+</code></pre><h3 id="隐藏文章"><a href="#隐藏文章" class="headerlink" title="隐藏文章"></a>隐藏文章</h3><p>可实现在首页和归档隐藏指定文章</p><p>首先在需要隐藏文章的 <code>Front-matter</code> 添加 <code>visible</code> 值，值为 <code>hide</code> 就表示隐藏。</p><h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><p>修改 <code>next/layout/index.swig</code> 中的</p><pre><code class="javascript">{% for post in page.post %}
+  {% if post.visible !== 'hide' %}
+    {{ post_template.render(post, true) }}
+  {% endif %}
+{% endfor %}
+</code></pre><p>在第 14 行左右，将 <code>for post in page.post</code> 中的内容修改成以上</p><h4 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h4><p>修改 <code>next/layout/index.swig</code>：</p><pre><code class="javascript">{% if post.visible !== 'hide' %}
+    {{ post_template.render(post, true) }}
+{% endif %}
+</code></pre><p>在第 42 行左右，将原本的 <code>post_template.render(post)</code> 改成以上。</p><p>不建议在归档中隐藏是因为归档提供的是一个统计的功能，隐藏后统计的文章篇数没变，但却显示不出来，有点别扭，不想要别人看就直接加密就好了。至于 <code>type</code> 和 <code>tags</code>，删除文章的相应字段就行了。</p><h3 id="分享页面"><a href="#分享页面" class="headerlink" title="分享页面"></a>分享页面</h3><p>NexT 主题自带的是 <a href="http://www.jiathis.com/" target="_blank" rel="external">JiaThis</a>，可是太丑了，还不支持 <code>https</code>，找了好久终于到了「<a href="http://overtrue.me/share.js/" target="_blank" rel="external">Share.js</a>」，简直把 JiaThis 秒成渣：</p><p>新增文件：<code>next/layout/_partials/share/sharejs.swig</code></p><pre><code class="javascript">&lt;div class=&quot;share-component&quot; data-mobile-sites=&quot;weibo,qq,qzone,tencent&quot;&gt;&lt;/div&gt;
+&lt;!-- share.css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css&quot;&gt;
+
+&lt;!-- share.js --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>随后修改 <code>next\layout\post.swig</code>：</p><pre><code class="javascript">&lt;div class=&quot;post-spread&quot;&gt;            //在这一行后面添加：
+  {% include '_partials/share/sharejs.swig' %}
+...
+</code></pre><p>效果见下方</p><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>本文标题：</strong> NexT 主题配置备份（二）<br> <strong>最后更新：</strong>2017 年 12 月 26 日 - 12:12<br> <strong>本文链接：</strong><a href="https://itswincer.com/posts/654861fb/">https://itswincer.com/posts/654861fb/</a><strong><br> 本文采用：<strong>署名-非商业性使用-禁止演绎 4.0 国际</strong> 协议进行许可，阅读 <a rel="nofollow noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank">相关说明</a></strong></p></blockquote></div><div id="disqus-comment"><div id="disqus_thread"></div><style>.disqus_click_btn{line-height:30px;margin:0;min-width:50px;padding:0 14px;display:inline-block;font-family:Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;text-transform:uppercase;letter-spacing:0;overflow:hidden;will-change:box-shadow;transition:box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline:0;cursor:pointer;text-decoration:none;text-align:center;vertical-align:middle;border:0;background:#b3d4fc;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);color:#fff;background-color:#757575;text-shadow:0;display:block}</style><div class="btn_click_load"> <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config=function(){this.page.url="https://itswincer.com/posts/654861fb/",this.page.identifier="https://itswincer.com/posts/654861fb/"}</script><script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//wincer.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script></div><style>#disqus-comment{background-color:#eee;padding:2pc}</style></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"> <a href="/posts/48621277/" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div> <a href="/posts/cd8ce2d7/" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://upload-images.jianshu.io/upload_images/2133488-a2ec6b5d8fb8e0c9.jpg)"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="https://upload-images.jianshu.io/upload_images/2133488-9cf5109c2d59a64a.jpg" alt="WincerChan's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">WincerChan#gmail.com<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="mailto:WincerChan[at]gmail[dot]com" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客栈/">博客栈<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/实验室/">实验室<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/文字阁/">文字阁<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/碎碎念/">碎碎念<span class="sidebar_archives-count">10</span></a></li></ul></li><li class="divider"></li><li> <a href="/timeline/" title="归档"><i class="material-icons sidebar-material-icons">inbox</i> 归档</a></li><li> <a href="/tags/" title="标签"><i class="material-icons sidebar-material-icons">label</i> 标签</a></li><li> <a href="/life/" title="生活"><i class="material-icons sidebar-material-icons">book</i> 生活</a></li><li> <a href="/about/" title="关于"><i class="material-icons sidebar-material-icons">person</i> 关于</a></li><li> <a href="/atom.xml" title="订阅"><i class="material-icons sidebar-material-icons">rss_feed</i> 订阅</a></li><li class="divider"></li><li> <a href="/archives">文章总数 <span class="sidebar-badge">43</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"> <a href="https://github.com/WincerChan" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"> <span class="visuallyhidden">Github</span></button></a> <a href="https://t.me/Tivsae" target="_blank"><button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram"> <span class="visuallyhidden">Telegram</span></button></a></div><div id="copyright"> Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>Wincer's Blog</div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script><script>var agent=navigator.userAgent.toLowerCase();agent.indexOf("ucbrowser")>0&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("hanabi","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/hanabi-browser-bundle.js",!0)</script><script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script><script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script><script>lsloader.load("sw_js","/sw-reg.js",!0)</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div><script>!function(t){function n(n){var e=n.getBoundingClientRect();return e.top>=0&&e.left>=0&&e.top<=(t.innerHeight||document.documentElement.clientHeight)}function e(t,n){var e=new Image,i=t.getAttribute("data-original");e.onload=function(){t.src=i,n&&n()},e.src=i}function i(){for(var t=0;t<o.length;t++)n(o[t])&&e(o[t],function(){o.splice(t,t)})}var o=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));i(),t.addEventListener("scroll",i)}(this)</script></body></html>
