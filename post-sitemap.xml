@@ -55,22 +55,6 @@
     </url>
 
     <url>
-        <loc>https://blog.itswincer.com/posts/c10dafe5/</loc>
-        <lastmod>2017-12-26T04:02:07.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.itswincer.com/posts/48621277/</loc>
-        <lastmod>2017-12-26T04:02:07.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.itswincer.com/posts/1060d444/</loc>
         <lastmod>2017-12-26T04:02:07.866Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,7 +63,23 @@
     </url>
 
     <url>
+        <loc>https://blog.itswincer.com/posts/c10dafe5/</loc>
+        <lastmod>2017-12-26T04:02:07.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.itswincer.com/posts/444a2b9d/</loc>
+        <lastmod>2017-12-26T04:02:07.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.itswincer.com/posts/48621277/</loc>
         <lastmod>2017-12-26T04:02:07.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -104,6 +104,14 @@
 
     <url>
         <loc>https://blog.itswincer.com/posts/a0df572f/</loc>
+        <lastmod>2017-12-26T04:02:07.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.itswincer.com/posts/af991767/</loc>
         <lastmod>2017-12-26T04:02:07.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -151,14 +159,6 @@
     </url>
 
     <url>
-        <loc>https://blog.itswincer.com/posts/af991767/</loc>
-        <lastmod>2017-12-26T04:02:07.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.itswincer.com/posts/dfc84766/</loc>
         <lastmod>2017-12-26T04:02:07.859Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -183,14 +183,6 @@
     </url>
 
     <url>
-        <loc>https://blog.itswincer.com/posts/e5d13eb/</loc>
-        <lastmod>2017-12-26T04:02:07.859Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.itswincer.com/posts/cd8ce2d7/</loc>
         <lastmod>2017-12-26T04:02:07.859Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -207,8 +199,8 @@
     </url>
 
     <url>
-        <loc>https://blog.itswincer.com/posts/72474942/</loc>
-        <lastmod>2017-12-26T04:02:07.856Z</lastmod>
+        <loc>https://blog.itswincer.com/posts/e5d13eb/</loc>
+        <lastmod>2017-12-26T04:02:07.859Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -231,7 +223,7 @@
     </url>
 
     <url>
-        <loc>https://blog.itswincer.com/posts/903c6509/</loc>
+        <loc>https://blog.itswincer.com/posts/72474942/</loc>
         <lastmod>2017-12-26T04:02:07.856Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -239,7 +231,7 @@
     </url>
 
     <url>
-        <loc>https://blog.itswincer.com/posts/2aa541e6/</loc>
+        <loc>https://blog.itswincer.com/posts/903c6509/</loc>
         <lastmod>2017-12-26T04:02:07.856Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -256,6 +248,14 @@
 
     <url>
         <loc>https://blog.itswincer.com/posts/cfd78fa9/</loc>
+        <lastmod>2017-12-26T04:02:07.856Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.itswincer.com/posts/2aa541e6/</loc>
         <lastmod>2017-12-26T04:02:07.856Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
