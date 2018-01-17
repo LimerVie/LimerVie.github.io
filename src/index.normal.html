@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wincer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="icon shortcut" type="image/ico" href="img/favicon.png">
+    <link rel="icon" sizes="144x144" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#455A64">
+    <meta name="apple-mobile-web-app-title" content="Wincer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#455A64">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#E0E0E0">
+    <meta name="author" content="WincerChan">
+    <meta name="description" content="Hi, I'm Wincer. Nice to meet you!">
+    <link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/theaterjs@latest/dist/theater.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <div class="container">
+        <div id="main" class="valign" style="height:100vh">
+            <div class="center">
+                <div class="typo text-center">
+                    <br>
+                    <img class="center img-circle" style="width:25%; height: auto;" src="https://upload-images.jianshu.io/upload_images/2133488-ea46b88016a0c20b.png">
+                    <div id="vader"></div>
+                    <script>
+                        var theater=new theaterJS();var theater=theaterJS();theater.on("type:start, erase:start",function(){var actor=theater.getCurrentActor();actor.$element.classList.add("is-typing")}).on("type:end, erase:end",function(){var actor=theater.getCurrentActor();actor.$element.classList.remove("is-typing")});theater.addActor("vader");theater.addScene("vader:<h4>hi, I'm <strong>Wincer</strong><small> /ˈwɪnsə(r)/</small></h4>",{accuracy:0.4,speed:0.1});
+                    </script>
+                    <div class="js-fade fade-in is-paused">
+                    <script src="hitodb.js"></script>
+                    <blockquote class="animate-init"><script>gethito();</script></blockquote>
+	         <hr>	
+                    <span>
+                        <a class="animate-init" href="https://itswincer.com" target="_blank"><strong>Blog</strong></a> &nbsp;· &nbsp;<a class="animate-init" href="https://github.com/WincerChan" target="_blank" rel="noreferrer noopener"><strong>GitHub</strong></a> &nbsp;· &nbsp;<a class="animate-init" href="mailto:WincerChan#gmail.com" target="_blank"><strong>E-mail</strong></a> &nbsp;· &nbsp;<a class="animate-init" href="https://t.me/Tivsae" target="_blank" rel="noreferrer noopener"><strong>Telegram</strong></a>
+                    </span>
+                    </div>
+                </div>
+                <br>
+                <script>var el = document.querySelector('.js-fade');
+if (el.classList.contains('is-paused')){
+  el.classList.remove('is-paused');
+}</script>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){var delay=1;var DELAY_STEP=300;var animationOptions={opacity:1,top:0};$("h4").animate(animationOptions).promise().pipe(animateMain).pipe(animateHito);function animateMain(){var dfd=$.Deferred();var els=$(".animate-init");var size=els.size();els.each(function(index,el){delay++;$(el).delay(index*DELAY_STEP).animate(animationOptions);(size-1===index)&&dfd.resolve()});return dfd.promise()}function animateHito(){$(".hitotoko").delay(delay*DELAY_STEP).animate({opacity:1,top:0}).promise().done(animationQuote)}function animationQuote(){}});
+</script>
+</html>

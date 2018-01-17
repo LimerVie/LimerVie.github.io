@@ -1,0 +1,231 @@
+.center {
+	display: block!important;
+	margin-right: auto!important;
+	margin-left: auto!important
+}
+
+.valign {
+	display: -webkit-box!important;
+	display: -ms-flexbox!important;
+	display: flex!important;
+	-webkit-box-align: center!important;
+	-ms-flex-align: center!important;
+	align-items: center!important
+}
+
+.text-center {
+	text-align: center!important
+}
+
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
+
+body {
+	margin: 0
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em
+}
+
+
+hr {
+	height: 0;
+	box-sizing: content-box;
+	overflow: visible
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects
+}
+
+b,strong {
+	font-weight: inherit;
+	font-weight: bolder
+}
+
+img {
+	border-style: none
+}
+
+svg:not(:root) {
+	overflow: hidden
+}
+
+body {
+	font-family: Roboto,Noto,Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	color: rgba(0,0,0,.87);
+	background-color: #fff
+}
+
+
+
+
+.typo {
+	line-height: 1.8;
+	word-wrap: break-word
+}
+
+
+
+.typo a {
+	position: relative;
+	top: 10px;
+	font-size: 1.1em;
+	opacity: 0;
+	overflow: hidden;
+	color: #2e6f92;
+	text-decoration: none;
+	outline: 0
+}
+
+.typo a:before {
+	position: absolute;
+	top: auto;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	content: ' ';
+	background-color: #2e6f92;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden
+}
+
+.typo a:focus:before,.typo a:hover:before {
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1)
+}
+
+.typo small {
+	font-size: 80%
+}
+
+.typo blockquote {
+	position: relative;
+	top: -10px;
+	opacity: 0;
+	text-align: center;
+	margin: 1em 2em 1em 1em;
+	font-weight: 400;
+	top: 15px;
+}
+
+.typo blockquote {
+    line-height: 1.8;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.typo blockquote {
+	    padding: 1em 0 0 1em;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+	background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTRweCIgaGVpZ2h0PSIxNXB4IiB2aWV3Qm94PSIwIC0xIDE0IDE1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuMDAwMDAwLCAwLjAwMDAwMCkiPjxyZWN0IGZpbGw9IiNkZGRkZGQiIHg9IjAiIHk9IjUuNzYiIHdpZHRoPSI1LjI4IiBoZWlnaHQ9IjcuNjgiPjwvcmVjdD48cGF0aCBkPSJNNy42ODI4MTI1LDYuMTcwNjI0OTYgQzcuNjgyODEyNSw2LjE3MDYyNDk2IDcuMzQwMzkwNjIsMi40MjgxMjUgMTEuMjU0MjE4NywwLjQ1Njc5Njg3NSIgc3Ryb2tlPSIjZGRkZGRkIiBzdHJva2Utd2lkdGg9IjIiPjwvcGF0aD48cGF0aCBkPSJNMC45NjI4MTI1LDYuMTcwNjI0OTYgQzAuOTYyODEyNSw2LjE3MDYyNDk2IDAuNjIwMzkwNjI1LDIuNDI4MTI1IDQuNTM0MjE4NzUsMC40NTY3OTY4NzUiIHN0cm9rZT0iI2RkZGRkZCIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PHJlY3QgZmlsbD0iI2RkZGRkZCIgeD0iNi43MiIgeT0iNS43NiIgd2lkdGg9IjUuMjgiIGhlaWdodD0iNy42OCI+PC9yZWN0PjwvZz48L3N2Zz4gCg==) no-repeat;
+}
+
+
+.typo blockquote footer {
+	font-size: 86%;
+	color: rgba(0,0,0,.54)
+}
+
+
+.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6 {
+	margin-top: 1.2em;
+	margin-bottom: .6em;
+	font-family: inherit;
+	font-weight: 400;
+	line-height: 1.35;
+	color: inherit
+}
+
+
+.typo h4 {
+	font-size: 1.4em
+}
+
+.typo hr {
+	height: 10px;
+	margin-bottom: .8em;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,.12)
+}
+
+
+
+.typo img {
+	max-width: 100%
+}
+
+
+.img-fluid,.video-fluid {
+	display: block;
+	max-width: 100%;
+	height: auto
+}
+
+.img-rounded {
+	border-radius: 2px
+}
+
+.img-circle {
+	border-radius: 50%
+}
+
+
+
+.container,.container-fluid {
+	box-sizing: border-box;
+	padding-right: 8px;
+	padding-left: 8px;
+	margin-right: auto;
+	margin-left: auto
+}
+
+.container-fluid:after,.container:after {
+	display: table;
+	clear: both;
+	content: ''
+}
+
+.container {
+	width: 96%;
+	max-width: 80pc
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1 forwards;
+}
+
+.is-paused {
+  animation-play-state: paused;
+}
+blockquote {
+  color: #7b7b7b;
+}
+
+span {
+	position: relative;
+	top: -10px
+	opacity: 0;
+}
